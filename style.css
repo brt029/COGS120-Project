@@ -20,6 +20,12 @@
   font-weight: bold;
 }
 
+.topright a {
+  position:relative;
+  right:-50%;
+  width:100px;
+}
+
 /* Style image to the left */
 #content .col {
   float:left;
