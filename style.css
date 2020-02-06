@@ -1,17 +1,24 @@
-/* Style the header and some padding */
+/* Style the header */
 .header {
+  overflow: hidden;
   background-color: #f1f1f1;
   padding: 20px 10px;
 }
 
 /* Style the header links */
 .header a {
-  color: black;
+  width: 100%;
+  color: DodgerBlue;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+}
+
+body {
+  position: relative;
+  display: block;
 }
 
 /* Style the logo link  */
@@ -20,58 +27,75 @@
   font-weight: bold;
 }
 
+/*
 .topright a {
   position:relative;
   right:-50%;
   width:100px;
 }
+*/
 
 /* Style image to the left */
+/*
 #content .col {
   float:left;
 }
+*/
 
 /* Style text to the right */
+/*
 #footer {
   clear:right;
 }
+*/
 
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 100%;
   padding: 10px;
+  border-width: 2px;
+  border-radius: 25px;
 }
 
+
 /* Clear floats after the columns */
+/*
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
+*/
 
 /* Style the navigation menu */
 .navbar {
   width: 100%;
+  max-width: 100%;
   background-color: #555;
   overflow: auto;
-  position: fixed;
+  position: absolute;
   bottom: 0;
+  border-radius: 25px;
 }
 
 /* Navigation links */
 .navbar a {
+  border-radius: 25px;
   float: left;
   padding: 12px;
   color: white;
   text-decoration: none;
   font-size: 17px;
-  width: 22.5%; /* Four equal-width links */
+  width: 25%; /* Four equal-width links */
   text-align: center; 
+}
+
+a:hover h3{
+  color: rgb(43, 43, 43);
 }
 
 /* Add a background color on mouse-over */
 .navbar a:hover {
   background-color: #000;
 }
-
