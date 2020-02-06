@@ -1,12 +1,17 @@
-/* Style the header and some padding */
+/* Style the header with a grey background and some padding */
 .header {
+  overflow: hidden;
+  width: 100%;
   background-color: #f1f1f1;
-  padding: 20px 10px;
+  /* padding: 20px 10px; */
 }
 
 /* Style the header links */
 .header a {
+  width: 100%;
+  float: left;
   color: black;
+  text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
@@ -14,26 +19,94 @@
   border-radius: 4px;
 }
 
-/* Style the logo link  */
+body{
+  position: relative;
+  display: block;
+
+}
+
+h3, h2, p{
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-weight: 600;
+}
+
+h3{
+  font-size: 2em;
+}
+
+h2{
+  font-size: 2em;
+  font-weight: 600;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
 }
 
-.topright a {
-  position:relative;
-  right:-50%;
-  width:100px;
+img{
+  margin: 10px 0px;
+  opacity: 0.4;
+  width: 50%;
+  height: auto;
+  left: 25%;
+  position: relative;
+
 }
 
-/* Style image to the left */
-#content .col {
+.container{
+  position: relative;
+  display: block;
+}
+
+.center{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+/* #content .col {
   float:left;
+} */
+
+#clear {
+  clear: right;
 }
 
-/* Style text to the right */
-#footer {
-  clear:right;
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
 }
 
 /* Create two equal columns that floats next to each other */
@@ -41,6 +114,11 @@
   float: left;
   width: 100%;
   padding: 10px;
+  margin: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 25px;
+  border-color: black;
 }
 
 /* Clear floats after the columns */
@@ -52,7 +130,10 @@
 
 /* Style the navigation menu */
 .navbar {
+  position: fixed;
+  border-radius: 25px;
   width: 100%;
+  max-width: 100%;
   background-color: #555;
   overflow: auto;
   position: fixed;
@@ -61,17 +142,30 @@
 
 /* Navigation links */
 .navbar a {
+  border-radius: 25px;
   float: left;
   padding: 12px;
   color: white;
   text-decoration: none;
-  font-size: 17px;
-  width: 22.5%; /* Four equal-width links */
-  text-align: center; 
+  font-size: 36px;
+  width: 22.5%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
 }
 
-/* Add a background color on mouse-over */
+a:hover h2{
+  color: rgb(43, 43, 43);
+}
+
 .navbar a:hover {
   background-color: #000;
 }
 
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}
