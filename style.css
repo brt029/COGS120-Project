@@ -1,14 +1,16 @@
-/* Style the header */
+/* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
+  width: 100%;
   background-color: #f1f1f1;
-  padding: 20px 10px;
 }
 
 /* Style the header links */
 .header a {
   width: 100%;
-  color: DodgerBlue;
+  float: left;
+  color: black;
+  text-align: center;
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
@@ -16,67 +18,85 @@
   border-radius: 4px;
 }
 
-body {
+
+body{
   position: relative;
   display: block;
 }
 
-/* Style the logo link  */
+h3, h2, p{
+text-align: center;
+font-family: 'Muli', sans-serif;
+font-weight: 600;
+}
+
+h3{
+  font-size: 2em;
+}
+
+h2{
+  font-size: 2em;
+  font-weight: 600;
+}
+
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
 }
 
-/*
-.topright a {
-  position:relative;
-  right:-50%;
-  width:100px;
+img{
+  margin: 10px 0px;
+  opacity: 0.4;
+  width: 50%;
+  height: auto;
+  left: 25%;
+  position: relative;
 }
-*/
 
-/* Style image to the left */
-/*
-#content .col {
-  float:left;
+.container{
+  position: relative;
+  display: block;
 }
-*/
 
-/* Style text to the right */
-/*
-#footer {
+.center{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+/*.center a{
+  color:black;
+}*/
+
+#clear {
   clear:right;
 }
-*/
 
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;
   width: 100%;
   padding: 10px;
+  margin: 20px;
+  border-style: solid;
   border-width: 2px;
   border-radius: 25px;
+  border-color: black;
 }
 
-
-/* Clear floats after the columns */
-/*
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-*/
 
 /* Style the navigation menu */
 .navbar {
+  position: fixed;
+  border-radius: 25px;
   width: 100%;
-  max-width: 100%;
   background-color: #555;
   overflow: auto;
-  position: absolute;
-  bottom: 0;
-  border-radius: 25px;
+  position: fixed;
 }
 
 /* Navigation links */
@@ -86,12 +106,12 @@ body {
   padding: 12px;
   color: white;
   text-decoration: none;
-  font-size: 17px;
-  width: 25%; /* Four equal-width links */
-  text-align: center; 
+  font-size: 36px;
+  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
 }
 
-a:hover h3{
+a:hover h2{
   color: rgb(43, 43, 43);
 }
 
@@ -99,3 +119,4 @@ a:hover h3{
 .navbar a:hover {
   background-color: #000;
 }
+
