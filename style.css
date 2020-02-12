@@ -130,3 +130,8 @@ form{
   margin: 20px;
 }
 
+iframe{
+  right: 300px;
+  padding: 20px;
+  margin: auto;
+}
