@@ -122,6 +122,8 @@ a:hover h2{
 }
 
 form{
+
+  padding: 40px;
   display: inline-block;
   height: 10%;
   width: 50%;
