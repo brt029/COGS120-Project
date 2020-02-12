@@ -20,6 +20,7 @@
 
 
 body{
+  text-align: center;
   position: relative;
   display: block;
 }
@@ -118,5 +119,12 @@ a:hover h2{
 /* Add a background color on mouse-over */
 .navbar a:hover {
   background-color: #000;
+}
+
+form{
+  display: inline-block;
+  height: 10%;
+  width: 50%;
+  margin: 20px;
 }
 
