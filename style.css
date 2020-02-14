@@ -25,7 +25,8 @@ body{
   display: block;
 }
 
-h3, h2, p{
+h3, h2, p, label{
+padding: 20px;
 text-align: center;
 font-family: 'Muli', sans-serif;
 font-weight: 600;
@@ -134,4 +135,10 @@ iframe{
   right: 300px;
   padding: 20px;
   margin: auto;
+}
+
+input{
+  height: 20px;
+  width: 50%;
+
 }
