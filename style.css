@@ -1,4 +1,9 @@
 /* Style the header with a grey background and some padding */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .header {
   overflow: hidden;
   width: 100%;
@@ -91,14 +96,17 @@ img{
 }
 
 
-/* Style the navigation menu */
+/* this is our footer */
 .navbar {
   position: fixed;
+  /* clear: both;
+  position: relative; */
   border-radius: 25px;
   width: 100%;
   background-color: #555;
   overflow: auto;
   position: fixed;
+  
 }
 
 /* Navigation links */
@@ -109,7 +117,7 @@ img{
   color: white;
   text-decoration: none;
   font-size: 36px;
-  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  width: 25%; 
   text-align: center; /* If you want the text to be centered */
 }
 
@@ -141,4 +149,13 @@ input{
   height: 20px;
   width: 50%;
 
+}
+
+.content{
+  min-height: 100%;
+  margin-bottom: -100px;
+}
+
+.push { 
+  height: 100px;
 }
