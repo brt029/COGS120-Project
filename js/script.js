@@ -49,12 +49,26 @@ var sitePages = [
     }
 ]
 
+//firebase config
+var firebaseConfig = {
+    apiKey: "AIzaSyCgyH2DoUf62eE5_4ynCs1sgDVbwNnjYKo",
+    authDomain: "warmup-app.firebaseapp.com",
+    databaseURL: "https://warmup-app.firebaseio.com",
+    projectId: "warmup-app",
+    storageBucket: "warmup-app.appspot.com",
+    messagingSenderId: "579071689102",
+    appId: "1:579071689102:web:592463cf43e9e533b764df",
+    measurementId: "G-LTVSFPYGCC"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
 function searchWebsite(){
     var searchInput = document.getElementById("search").value;
     for (i = 0; i < sitePages.length; i++ ){
         if( 0 == searchInput.localeCompare(sitePages[i].keyword)){
             window.location = sitePages[i].link;
-            console.log(window.location);
             return;
         }
     }
@@ -62,16 +76,26 @@ function searchWebsite(){
 }
 
 function checkLogin(){
-    var email = document.getElementById("username").value;
+    var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+
+    //change
+    window.location = "home.html";
 }
 
-// //to make enter do something in input field
-// var input = document.getElementById("search");
-// input.addEventListener("keyup", function(event) {
-//   if (event.keyCode === 13) {
-//    event.preventDefault();
-// //    document.getElementById("button").click();
-//    searchWebsite();
-//   }
-// });
+function createAccount(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+
+    //change
+    window.location = "home.html";
+}
+
+function writeUserData(userId, name, email, password) {
+    firebase.database().ref('users/' + userId).set({
+      username: name,
+      email: email,
+      password : password
+    });
+  }
