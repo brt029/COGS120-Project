@@ -2,6 +2,12 @@ import java.util.*;
 
 /** This class is where the Experience points and the data get processed for
  *  our level up scheme in our work out application, WarmUp.
+ * 
+ *  In order for this class to be implemented, we are going to need JavaScript
+ *  to call this class whenever an achievement has been reached. The JavaScript
+ *  will feed it a number (stored somewhere in a database..?) attached to the user.
+ *  Then Level.java will update the number and replace it in the database.
+ *  In the case of it being shown on the website, displayLevel will be shown.
  *
  *  @author Chris Robinson, Elaine Nguyen, Bradley Tran
  *  Created February 16, 2020
@@ -69,10 +75,14 @@ public class Level
         return this.expUntilNextLevel;
     }
     
+    public void displayLevel(){
+        
+    }
+
     public static void main( String[] args )
     {
         //Testing
-
+        System.out.println("check");
         return;
     }
 }
