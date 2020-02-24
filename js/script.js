@@ -62,7 +62,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+//   firebase.analytics();
 
 function searchWebsite(){
     var searchInput = document.getElementById("search").value;
@@ -79,8 +79,19 @@ function checkLogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    //change
-    window.location = "home.html";
+    if(userExists(username)){ //user exists, check for password
+        if(usernameMatchesPassword()){
+            login();
+        }
+        else{
+            console.log("username and password do not match");
+        }
+    }
+    else{
+        console.log("username does not exist");
+    }
+
+            
 }
 
 function createAccount(){
@@ -88,14 +99,43 @@ function createAccount(){
     var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
 
-    //change
-    window.location = "home.html";
+    if(userExists(username)){ //user exists, can't make acc
+        console.log("username already exists");
+    }   
+    else{ //user doesn't exist, make acc
+        addNewUser(username, email, password);
+        window.location.href = "home.html";
+    }
 }
 
-function writeUserData(userId, name, email, password) {
-    firebase.database().ref('users/' + userId).set({
-      username: name,
+function addNewUser(username, email, password) {
+    firebase.database().ref('users/' + username).set({
       email: email,
       password : password
     });
   }
+
+  function userExists(value){
+    firebase.database().ref().child("users").orderByChild("username").equalTo(username_here).on("value", function(snapshot) {
+        if (snapshot.exists()) {
+             return true;
+        }else{
+            return false;
+          }
+        });
+    }
+
+    function usernameMatchesPassword{
+        //TODO
+        return true;
+    }
+
+    function login(){
+        //TODO
+        return;
+    }
+
+    function completedWorkOut(){
+        //TODO add 35 points to exp
+
+    }
